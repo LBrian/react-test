@@ -1,14 +1,26 @@
 import React from "react";
 
-interface Props {}
+import { SMS } from "./service";
 
-const MessageDisplay: React.FC<Props> = () => {
+interface Props {
+  history: SMS[];
+}
+
+const MessageDisplay: React.FC<Props> = ({ history }) => {
   return (
     <div className="MessageDisplay">
       <header>Sent SMS</header>
+      <ol>
+        {history.map(({ recipient, cost, message, _id }) => (
+          <li key={_id}>
+            <span>+{recipient}</span>
+            <span>{cost}</span>
+            <span>{message}</span>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 };
 
 export default MessageDisplay;
-

@@ -2,6 +2,46 @@
   display: flex;
 }
 
-.MessageDisplay, .MessageForm {
+.MessageDisplay,
+.MessageForm {
   flex-grow: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem;
+  gap: 1rem;
+}
+
+form div {
+  display: flex;
+  gap: 1rem;
+}
+
+form div:not(:last-child) label {
+  width: 100px;
+}
+
+form div:not(:last-child) input {
+  flex: 1;
+}
+
+form div:last-child {
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+form #submit {
+  width: 100px;
+}
+
+.MessageDisplay ol {
+  font-size: 0.75rem;
+  color: #888888;
+}
+
+.MessageDisplay ol li {
+  display: flex;
+  gap: 0.4rem;
 }
